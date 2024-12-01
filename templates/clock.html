@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>The time is now</h1>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'clock.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="container_left" >
+        <p1 id ="hours"></p1>
+    </div>
+    <div class="container_middle"
+        <p2 id ="minutes"></p2>
+    </div>
+    <div class="container_right"
+        <p3 id ="seconds"></p3>
+    </div>
+</div>
+
+
+<script>
+    function updateTime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+</script>
+</body>
+</html>
