@@ -4,4 +4,4 @@ from django.template import loader
 
 
 def clock(request):
-    return render(request,'clock.html')
+    return render(request, 'clock/clock.html')
